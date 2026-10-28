@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>goserver — a tiny Go web server</title>
+    <meta
+      name="description"
+      content="A small Go server serving plain HTML pages, styled by hand."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <span class="brand-mark">Go</span>
+          <span>goserver</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="/" aria-current="page">Home</a>
+          <a href="/form.html">Form</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Served from localhost</p>
+          <h1>Small server, <em>clean</em> front page.</h1>
+          <p class="lede">
+            Three files and a few lines of Go. This page is plain HTML, styled
+            with a single stylesheet — no build step, no framework, nothing to
+            configure.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/form.html">Open the form</a>
+            <a class="btn btn-ghost" href="#how">How it works</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="how">
+        <div class="wrap">
+          <p class="section-title">How it works</p>
+          <div class="grid">
+            <article class="card">
+              <span class="card-num">01</span>
+              <h3>static files</h3>
+              <p>
+                Point an <code>http.FileServer</code> at the folder and every
+                page is served as-is.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-num">02</span>
+              <h3>One stylesheet</h3>
+              <p>
+                Both pages share <code>style.css</code>, so the look stays
+                consistent without repeating rules.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-num">03</span>
+              <h3>Real form</h3>
+              <p>
+                The form posts back to the server, ready for a handler that
+                reads the fields.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>Built with Go and plain HTML.</span>
+        <a href="/form.html">Go to the form →</a>
+      </div>
+    </footer>
+  </body>
+</html>

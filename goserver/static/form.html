@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send a message — goserver</title>
+    <meta name="description" content="A simple styled form served by the Go server." />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <span class="brand-mark">Go</span>
+          <span>goserver</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="/">Home</a>
+          <a href="/form.html" aria-current="page">Form</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="form-page">
+      <div class="wrap">
+        <p class="eyebrow">Form</p>
+        <h1>Send a message</h1>
+        <p class="lede">
+          Fill this in and submit — the server receives the fields as a normal
+          form post.
+        </p>
+
+        <form class="form-shell" action="/submit" method="post" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ada Lovelace"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ada@example.com"
+              autocomplete="email"
+              required
+            />
+            <span class="hint">Used only to reply — never shown publicly.</span>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <a class="note" href="/">Cancel and go back</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>Built with Go and plain HTML.</span>
+        <a href="/">← Back home</a>
+      </div>
+    </footer>
+  </body>
+</html>
